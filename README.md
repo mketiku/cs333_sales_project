@@ -3,10 +3,11 @@
 
 The attached data file contains the information for the sales project. It is a csv file and correlates well to a relation that is not in BCNF. It is a list of people from a sales contact database with approximately 35,000 names. 
 
-# Cleaned project data using a combination of perl, awk and csvkit
-'''bash 
+### Cleaning 
+Cleaned project data using a combination of perl, awk and csvkit
+```bash 
 cat projectdata.xlsv | perl -pi.bak -e 's/[\000-\007\013-\037\177-\377]//g;' | awk '{gsub("_",""); print}' project_data_dirty.csv > project_data_clean.csv
-'''
+```
 ---
 
 * id - unique identifier, this is a GUID, you can store it as a string
